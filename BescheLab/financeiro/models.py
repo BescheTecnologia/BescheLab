@@ -18,4 +18,3 @@ class Endereco(models.Model):
     cidade = models.CharField(max_length=50)
     estado = models.CharField(max_length=50)
     complemento = models.CharField(max_length=50)
-    pessoa = models.ForeignKey(Pessoa)

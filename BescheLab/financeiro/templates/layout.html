@@ -36,7 +36,7 @@
         <div class="col-md-3 left_col">
           <div class="left_col scroll-view">
             <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><i class="fa fa-paw"></i> <span>Besche Lab</span></a>
+              <a href="{% url index}" class="site_title"><i class="fa fa-paw"></i> <span>Besche Lab</span></a>
             </div>
 
             <div class="clearfix"></div>
@@ -214,21 +214,21 @@
     <!-- NProgress -->
     <script src="{%static 'vendors/nprogress/nprogress.js' %}"></script>
     <!-- Datatables -->
-    <script src="{%static 'vendors/datatables.net/js/jquery.dataTables.min.js' %"></script>
-    <script src="{%static 'vendors/datatables.net-bs/js/dataTables.bootstrap.min.js' %"></script>
-    <script src="{%static 'vendors/datatables.net-buttons/js/dataTables.buttons.min.js' %"></script>
-    <script src="{%static 'vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js' %"></script>
-    <script src="{%static 'vendors/datatables.net-buttons/js/buttons.flash.min.js' %"></script>
-    <script src="{%static 'vendors/datatables.net-buttons/js/buttons.html5.min.js' %"></script>
-    <script src="{%static 'vendors/datatables.net-buttons/js/buttons.print.min.js' %"></script>
-    <script src="{%static 'vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js' %"></script>
-    <script src="{%static 'vendors/datatables.net-keytable/js/dataTables.keyTable.min.js' %"></script>
-    <script src="{%static 'vendors/datatables.net-responsive/js/dataTables.responsive.min.js' %"></script>
-    <script src="{%static 'vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js' %"></script>
-    <script src="{%static 'vendors/datatables.net-scroller/js/datatables.scroller.min.js' %"></script>
-    <script src="{%static 'vendors/jszip/dist/jszip.min.js' %"></script>
-    <script src="{%static 'vendors/pdfmake/build/pdfmake.min.js' %"></script>
-    <script src="{%static 'vendors/pdfmake/build/vfs_fonts.js' %"></script>
+    <script src="{%static 'vendors/datatables.net/js/jquery.dataTables.min.js' %}"></script>
+    <script src="{%static 'vendors/datatables.net-bs/js/dataTables.bootstrap.min.js' %}"></script>
+    <script src="{%static 'vendors/datatables.net-buttons/js/dataTables.buttons.min.js' %}"></script>
+    <script src="{%static 'vendors/datatables.net-buttons-bs/js/buttons.bootstrap.min.js' %}"></script>
+    <script src="{%static 'vendors/datatables.net-buttons/js/buttons.flash.min.js' %}"></script>
+    <script src="{%static 'vendors/datatables.net-buttons/js/buttons.html5.min.js' %}"></script>
+    <script src="{%static 'vendors/datatables.net-buttons/js/buttons.print.min.js' %}"></script>
+    <script src="{%static 'vendors/datatables.net-fixedheader/js/dataTables.fixedHeader.min.js' %}"></script>
+    <script src="{%static 'vendors/datatables.net-keytable/js/dataTables.keyTable.min.js' %}"></script>
+    <script src="{%static 'vendors/datatables.net-responsive/js/dataTables.responsive.min.js' %}"></script>
+    <script src="{%static 'vendors/datatables.net-responsive-bs/js/responsive.bootstrap.js' %}"></script>
+    <script src="{%static 'vendors/datatables.net-scroller/js/dataTables.scroller.min.js' %}"></script>
+    <script src="{%static 'vendors/jszip/dist/jszip.min.js' %}"></script>
+    <script src="{%static 'vendors/pdfmake/build/pdfmake.min.js' %}"></script>
+    <script src="{%static 'vendors/pdfmake/build/vfs_fonts.js' %}"></script>
     
     <!-- Custom Theme Scripts -->
     <script src="{%static 'build/js/custom.min.js' %}"></script>
@@ -285,7 +285,7 @@
         $('#datatable-responsive').DataTable();
 
         $('#datatable-scroller').DataTable({
-          ajax: "{%static 'js/datatables/json/scroller-demo.json' %",
+          ajax: "{%static 'js/datatables/json/scroller-demo.json' %}",
           deferRender: true,
           scrollY: 380,
           scrollCollapse: true,
