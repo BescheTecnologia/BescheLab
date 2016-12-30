@@ -38,6 +38,7 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'BescheLab.financeiro',
+    'BescheLab.laboratorio',
 ]
 
 MIDDLEWARE = [

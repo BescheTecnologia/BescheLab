@@ -3,7 +3,7 @@
 <div class="">
 	<div class="page-title">
 		<div class="title_left">
-			<h3>Cliente</h3>
+			<h3>Lançamentos</h3>
 		</div>
 	</div>
 	<div class="clearfix"></div>
@@ -11,7 +11,7 @@
 		<div class="col-md-12 col-sm-12 col-xs-12">
 			<div class="x_panel">
 				<div class="x_title">
-					<h2>Lista</h2>
+					<h2>Clientes</h2>
 					<ul class="nav navbar-right panel_toolbox">
 						<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
 					</ul>
@@ -34,7 +34,7 @@
                           <td>{{ pessoa.nome }}</td>
                           <td>{{ pessoa.telefone }}</td>
                           <td>{{ pessoa.email }}</td>
-                          <td><a href="{% url 'pessoa_detalhar' pessoa.pk %}"  class="btn btn-primary">Detalhes</a></td>
+                          <td><a href="{% url 'lancamento_listar' pessoa.pk %}"  class="btn btn-primary">Lançamento</a></td>
                         </tr>
                         {% endfor %}
                       </tbody>

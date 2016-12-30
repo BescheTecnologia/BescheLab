@@ -1,5 +1,6 @@
 from django.db import models
 from datetime import datetime
+from django.utils import timezone
 
 
 class Pessoa(models.Model):
@@ -74,11 +75,3 @@ class Complemento(models.Model):
     pessoa = models.OneToOneField(Pessoa, on_delete=models.CASCADE)
     numero = models.IntegerField('Número', blank=True, null=True)
     complemento = models.CharField(max_length=50, blank=True, null=True)
-
-
-class Exame(models.Model):
-    tipo = models.CharField(max_length=50)
-    valor = models.DecimalField("Valor", "valor", 10, 2)
-
-    def __str__(self):
-        return self.tipo
