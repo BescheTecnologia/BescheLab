@@ -34,12 +34,11 @@
                           <td>{{ pessoa.nome }}</td>
                           <td>{{ pessoa.telefone }}</td>
                           <td>{{ pessoa.email }}</td>
-                          <td><a href="{% url 'lancamento_listar' pessoa.pk %}"  class="btn btn-primary">Lançamento</a></td>
+                          <td><a href="{% url 'lancamento_listar' pessoa.pk %}"  class="btn btn-primary">Adicionar</a></td>
                         </tr>
                         {% endfor %}
                       </tbody>
                     </table>
-                    <a href="{% url 'pessoa_adicionar' %}"><div class="btn btn-primary">Adicionar</div></a>
 				</div>
 			</div>
 		</div>

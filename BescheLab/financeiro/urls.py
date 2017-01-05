@@ -21,6 +21,7 @@ urlpatterns = [
     url(r'^operacao/detalhar/(?P<pk>\d+)$', operacao.detalhar,name='operacao_detalhar'),
     url(r'^financeiro/operacao$', operacao.listar, name='operacao_listar'),
     #Urls de Lancamento
+    url(r'^lancamento/adicionar$', lancamento.adicionar, name='lancamento_adicionar'),
     url(r'^lancamento/editar/(?P<pk>\d+)$', lancamento.editar, name='lancamento_editar'),
     url(r'^lancamento/apagar/(?P<pk>\d+)$', lancamento.apagar, name='lancamento_apagar'),
     url(r'^lancamento/detalhar/(?P<pk>\d+)$', lancamento.detalhar,name='lancamento_detalhar'),

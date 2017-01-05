@@ -6,28 +6,29 @@ from ..models import Pessoa
 from ..models import Lancamento
 
 
-def listar(request, pk):
-    if request.method == 'POST':
-        form = LancamentoForm(request.POST)
-        if form.is_valid():
-            form.save()
-            return redirect(reverse('financeiro/lancamento_listar', kwargs={'pk': pk}))
-    else:
-        form = LancamentoForm()
-
-    lancamentos = Lancamento.objects.filter(lancamento_id=pk)
-    operacoes = Operacao.objects.all()
-    return render(request, 'financeiro/lancamento/listar.html',
-                  {'lancamentos': lancamentos, 'operacoes': operacoes,
-                   'lancamento_id': pk, 'form': form})
-
-
 LancamentoForm = modelform_factory(Lancamento, fields=('__all__'))
+
+
+def listar(request, pk):
+    lancamentos = Lancamento.objects.filter(id=pk)
+    return render(request, 'financeiro/lancamento/listar.html', {'lancamentos': lancamentos})
 
 
 def listarpessoa(request):
     pessoas = Pessoa.objects.all()
     return render(request, 'financeiro/lancamento/listarpessoa.html', {'pessoas': pessoas})
+
+
+def adicionar(request):
+    if request.method == 'POST':
+        form = LancamentoForm(request.POST)
+        if form.is_valid():
+            form.save()
+            return redirect(reverse('lancamento_listar'))
+    else:
+        form = LancamentoForm()
+    operacoes = Operacao.objects.all()
+    return render(request, 'financeiro/lancamento/adicionar.html', {'operacoes': operacoes, 'form': form})
 
 
 def detalhar(request, pk):
