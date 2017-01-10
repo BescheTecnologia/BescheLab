@@ -28,8 +28,8 @@
                 <label for="tipo">Tipo</label>
                 <select id="id_tipo" name="tipo" class="form-control input-sm" required>
                   <option>--Selecione--</option>
-                  {% for operacao in operacoes %}
-                  <option value="{{ tipo.pk }}">{{ lancamento.operacao.tipo }}</option>
+                  {% for tipo in tipos %}
+                  <option value="{{ tipo.pk }}">{{ tipo.nome }}</option>
                   {% endfor %}
                 </select>
               </div>

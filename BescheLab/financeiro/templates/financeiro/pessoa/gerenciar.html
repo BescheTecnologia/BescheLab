@@ -1,0 +1,246 @@
+{%extends 'layout.html'%}
+{% block conteudo %}
+<div>
+	<div class="page-title">
+		<div class="title_left">
+			<h3>Paciente</h3>
+		</div>
+	</div>
+	<div class="clearfix"></div>
+	<div class="row">
+	
+	<!-- Dados da pessoa -->
+		<div class="col-md-12 col-sm-12 col-xs-12">
+			<form id="demo-form2" class="form-horizontal form-label-left" method="POST">{% csrf_token %}
+				
+			<!-- Dados pessoais -->
+				<div class="x_panel">
+					<div class="x_title">
+						<h2>Dados Pessoais</h2>
+						<ul class="nav navbar-right panel_toolbox">
+							<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+						</ul>
+						<div class="clearfix"></div>
+					</div>
+					<div class="x_content">	
+	                    <div class="row">
+	                    
+	                    	<div class="form-group col-md-11 col-sm-11 col-xs-12">
+	                      		<label class="control-label col-md-3 col-sm-3 col-xs-12" for="nome">Nome *</label>
+	                        	<div class="col-md-7 col-sm-7 col-xs-12">
+	                        		<input type="text" id="nome" required="required" class="form-control" 
+	                        			value="{{formp.nome.value|default:'' }}" name="nome">
+	                        	</div>
+	                      	</div>
+	
+	                      	<div class="form-group col-md-11 col-sm-11 col-xs-12">
+	                      		<label class="control-label col-md-3 col-sm-3 col-xs-12" for="telefone">Telefone *</label>
+	                        	<div class="col-md-3 col-sm-3 col-xs-12">
+	                          		<input type="text" id="telefone" required="required" class="form-control" 
+	                          			value="{{formp.telefone.value|default:'' }}" name="telefone">
+	                        	</div>
+	                        	
+	                      		<!-- label class="control-label col-md-1 col-sm-1 col-xs-12" for="nome">Sexo *</label>
+	                      		<div id="gender" class="btn-group col-md-2 col-sm-4 col-xs-12" data-toggle="buttons">
+                                	<label class="btn btn-default active" data-toggle-class="btn-primary" 
+                                		data-toggle-passive-class="btn-default">
+                                  		<input type="radio" name="gender" value="male"> M
+                                	</label>
+                                	<label class="btn btn-primary" data-toggle-class="btn-primary" 
+                                		data-toggle-passive-class="btn-default">
+                                  		<input type="radio" name="gender" value="female"> F 
+                                	</label>
+                              	</div>
+                              	
+                              	<fieldset>
+                          			<div class="control-group">
+                            			<div class="controls">
+                              				<div class="col-md-11 xdisplay_inputx form-group has-feedback">
+                                				<input type="text" class="form-control has-feedback-left" id="single_cal3" 
+                                					placeholder="Nascimento" aria-describedby="inputSuccess2Status3">
+                                				<span class="fa fa-calendar-o form-control-feedback left" aria-hidden="true"></span>
+                                				<span id="inputSuccess2Status3" class="sr-only">(success)</span>
+                              				</div>
+                            			</div>
+                          			</div>
+                        		</fieldset-->
+	                      	</div>
+	
+	                      	<div class="form-group col-md-11 col-sm-11 col-xs-12">
+	                        	<label class="control-label col-md-3 col-sm-3 col-xs-12" for="cpf">CPF *</label>
+	                        	<div class="col-md-3 col-sm-3 col-xs-12">
+	                          		<input type="text" id="cpf" required="required" class="form-control" 
+	                          			value="{{formpf.cpf.value|default:'' }}" name="cpf">
+	                        	</div>
+	                        	
+	                        	<label class="control-label col-md-1 col-sm-1 col-xs-12" for="cns">CNS </label>
+	                        	<div class="col-md-3 col-sm-3 col-xs-12">
+	                          		<input type="text" id="cns" class="form-control" 
+	                          			value="{{formpf.cns.value|default:'' }}" name="cns">
+	                        	</div>
+	                      	</div>
+	                      	
+	                      	<div class="form-group col-md-11 col-sm-11 col-xs-12">
+	                        	<label class="control-label col-md-3 col-sm-3 col-xs-12" for="email">Email *</label>
+	                       		<div class="col-md-7 col-sm-7 col-xs-12">
+	                          		<input type="email" id="email" class="form-control" 
+	                          			value="{{formp.email.value|default:'' }}" name="email">
+	                        	</div>
+	                      	</div>
+	                    </div>
+					</div>
+				</div>
+				
+			<!-- Endereço -->
+				<div class="x_panel">
+					<div class="x_title">
+						<h2>Endereço</h2>
+						<ul class="nav navbar-right panel_toolbox">
+							<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+						</ul>
+						<div class="clearfix"></div>
+					</div>
+					<div class="x_content">	
+	                    <div class="row">
+	                    
+	                    	<div class="form-group col-md-11 col-sm-11 col-xs-12">
+	                      		<label class="control-label col-md-3 col-sm-3 col-xs-12" for="logradouro">Logradouro *</label>
+	                        	<div class="col-md-5 col-sm-5 col-xs-12">
+	                        		<input type="text" id="logradouro" required="" class="form-control" 
+	                        			value="{{forme.logradouro.value|default:'' }}" name="logradouro">
+	                        	</div>
+	                        	
+	                        	<label class="control-label col-md-1 col-sm-1 col-xs-12" for="numero">Nº </label>
+	                        	<div class="col-md-1 col-sm-1 col-xs-12">
+	                          		<input type="text" id="numero" class="form-control" 
+	                          			value="{{formc.numero.value|default:'' }}" name="numero">
+	                        	</div>
+	                      	</div>
+	
+	                      	<div class="form-group col-md-11 col-sm-11 col-xs-12">
+	                        	<label class="control-label col-md-3 col-sm-3 col-xs-12" for="bairro">Bairro *</label>
+	                        	<div class="col-md-3 col-sm-3 col-xs-12">
+	                          		<input type="text" id="bairro" required="required" class="form-control" 
+	                          			value="{{forme.bairro.value|default:'' }}" name="bairro">
+	                        	</div>
+	                        	
+	                        	<label class="control-label col-md-1 col-sm-2 col-xs-12" for="cidade">Cidade *</label>
+	                        	<div class="col-md-3 col-sm-3 col-xs-12">
+	                          		<input type="text" id="cidade" required="required" class="form-control" 
+	                          			value="{{forme.cidade.value|default:'' }}" name="cidade">
+	                        	</div>
+	                      	</div>
+	
+	                      	<div class="form-group col-md-11 col-sm-11 col-xs-12">
+	                        	<label class="control-label col-md-3 col-sm-3 col-xs-12" for="uf">UF *</label>
+	                       		<div class="col-md-1 col-sm-1 col-xs-12">
+	                          		<input type="text" id="uf" required="required" class="form-control" 
+	                          			value="{{forme.uf.value|default:'' }}" name="uf">
+	                        	</div>
+	                        	
+	                        	<label class="control-label col-md-2 col-sm-2 col-xs-12" for="complemento">Complemento </label>
+	                       		<div class="col-md-4 col-sm-4 col-xs-12">
+	                          		<input type="text" id="complemento" class="form-control" 
+	                          			value="{{formc.complemento.value|default:'' }}" name="complemento">
+	                        	</div>
+	                      	</div>
+	                    </div>
+	                </div>
+				</div>
+		
+			<!-- Exames -->
+				<!-- div class="x_panel">
+					<div class="x_title">
+						<h2>Exames</h2>
+						<ul class="nav navbar-right panel_toolbox">
+							<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+						</ul>
+						<div class="clearfix"></div>
+					</div>
+					<div class="x_content">	
+	                    <div class="row">
+	                    
+	                    	<div class="form-group col-md-11 col-sm-11 col-xs-12">
+	                      		<label class="control-label col-md-3 col-sm-3 col-xs-12" for="nome">Nome *</label>
+	                        	<div class="col-md-7 col-sm-7 col-xs-12">
+	                        		<input type="text" id="nome" required="required" class="form-control" 
+	                        			value="{{formp.nome.value|default:'' }}" name="nome">
+	                        	</div>
+	                      	</div>
+	                      	
+	                      	<div class="form-group col-md-11 col-sm-11 col-xs-12">
+                        		<label class="control-label col-md-3 col-sm-3 col-xs-12">Selecionar Exames</label>
+                        		<div class="col-md-7 col-sm-7 col-xs-12">
+		                        	<select class="select2_multiple form-control select2-hidden-accessible" multiple="" tabindex="-1" aria-hidden="true">
+		                            	<option>Choose option</option>
+		                           	 	<option>Option one</option>
+		                            	<option>Option two</option>
+		                            	<option>Option three</option>
+		                            	<option>Option four</option>
+		                            	<option>Option five</option>
+		                            	<option>Option six</option>
+		                          	</select>
+		                          	<span class="select2 select2-container select2-container--default select2-container--below select2-container--focus" 
+		                          	dir="ltr" style="width: 343px;">
+		                          		<span class="selection">
+		                          			<span class="select2-selection select2-selection--multiple" role="combobox" aria-haspopup="true" 
+		                          			aria-expanded="false" tabindex="-1">
+		                          				<ul class="select2-selection__rendered">
+		                          					<span class="select2-selection__clear">×</span>
+		                          					<li class="select2-selection__choice" title="Option one">
+		                          						<span class="select2-selection__choice__remove" role="presentation">×</span>Option one
+		                          					</li>
+		                          					<li class="select2-selection__choice" title="Option two">
+		                          						<span class="select2-selection__choice__remove" role="presentation">×</span>Option two
+		                          					</li>
+		                          					<li class="select2-selection__choice" title="Option three">
+		                          						<span class="select2-selection__choice__remove" role="presentation">×</span>Option three
+		                          					</li>
+		                          					<li class="select2-selection__choice" title="Option four">
+		                          						<span class="select2-selection__choice__remove" role="presentation">×</span>Option four
+		                          					</li>
+		                          					<li class="select2-selection__choice" title="Option five">
+		                          						<span class="select2-selection__choice__remove" role="presentation">×</span>Option five
+		                          					</li>
+		                          					<li class="select2-search select2-search--inline">
+		                          						<input class="select2-search__field" type="search" tabindex="0" autocomplete="off" 
+		                          						autocorrect="off" autocapitalize="off" spellcheck="false" role="textbox" aria-autocomplete="list" 
+		                          						placeholder="" style="width: 0.75em;">
+		                          					</li>
+		                          				</ul>
+		                          			</span>
+		                          		</span>
+		                          		<span class="dropdown-wrapper" aria-hidden="true"></span>
+		                    		</span>
+                        		</div>
+                      		</div>
+	
+	                      	<div class="form-group col-md-11 col-sm-11 col-xs-12">
+	                        	<label class="control-label col-md-3 col-sm-3 col-xs-12" for="telefone">Telefone *</label>
+	                        	<div class="col-md-3 col-sm-3 col-xs-12">
+	                          		<input type="text" id="telefone" required="required" class="form-control" 
+	                          			value="{{formp.telefone.value|default:'' }}" name="telefone">
+	                        	</div>
+	                        	
+	                        	<label class="control-label col-md-1 col-sm-1 col-xs-12" for="cpf">CPF *</label>
+	                        	<div class="col-md-3 col-sm-3 col-xs-12">
+	                          		<input type="text" id="cpf" required="required" class="form-control" 
+	                          			value="{{formpf.cpf.value|default:'' }}" name="cpf">
+	                        	</div>
+	                      	</div>
+	                    </div>
+					</div>
+				</div-->
+				
+				<div class="form-group">
+	    			<div class="col-md-12 col-sm-12 col-xs-12">
+	        			<a href="{% url 'pessoa_listar' %}"><div class="btn btn-sm btn-default">Voltar</div></a>
+	            		<button type="submit" class="btn btn-sm btn-success">Salvar</button>
+	        		</div>
+				</div>
+				
+			</form>
+		</div>
+	</div>
+</div>
+{% endblock%}
