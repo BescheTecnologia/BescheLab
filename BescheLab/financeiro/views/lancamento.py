@@ -2,7 +2,7 @@ from django.shortcuts import render, redirect
 from django.core.urlresolvers import reverse
 from django.forms.models import modelform_factory
 from ..models import Operacao
-from ..models import Pessoa
+from ../../pessoa/models import Pessoa
 from ..models import Lancamento
 
 
