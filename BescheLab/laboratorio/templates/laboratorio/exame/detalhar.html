@@ -1,24 +1,26 @@
-{%extends 'layout.html'%}
-{% block conteudo %}
+{%extends 'layout.html'%} {% block conteudo %}
 <!-- Modal -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div class="modal-dialog" role="document">
-    <div class="modal-content">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title" id="myModalLabel">Excluir</h4>
-      </div>
-      <div class="modal-body">
-        Deseja realmente excluir este exame?
-      </div>
-      <div class="modal-footer">
-        <form action="{% url 'exame_apagar' exame.pk %}" method="POST">{% csrf_token %}
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
-          <button type="submit" class="btn btn-danger">Confirmar</button>
-        </form>
-      </div>
-    </div>
-  </div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog"
+	aria-labelledby="myModalLabel">
+	<div class="modal-dialog" role="document">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal"
+					aria-label="Close">
+					<span aria-hidden="true">&times;</span>
+				</button>
+				<h4 class="modal-title" id="myModalLabel">Excluir</h4>
+			</div>
+			<div class="modal-body">Deseja realmente excluir este exame?</div>
+			<div class="modal-footer">
+				<form action="{% url 'exame_apagar' exame.pk %}" method="POST">
+					{% csrf_token %}
+					<button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+					<button type="submit" class="btn btn-danger">Confirmar</button>
+				</form>
+			</div>
+		</div>
+	</div>
 </div>
 <!-- Fim do Modal -->
 <div class="">
@@ -39,36 +41,45 @@
 					<div class="clearfix"></div>
 				</div>
 				<div class="x_content">
-					<form id="demo-form2" class="form-horizontal form-label-left" method="POST">{% csrf_token %}
-                  
-                    <div class="row">
-                    
-                      <div class="form-group col-md-12 col-sm-12 col-xs-12">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="tipo">Tipo*
-                        </label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" id="tipo" disabled class="form-control col-md-9 col-sm-9 col-xs-12" placeholder="{{exame.tipo}}" name="tipo">
-                        </div>
-                      </div>
+					<form id="demo-form2" class="form-horizontal form-label-left"
+						method="POST">
+						{% csrf_token %}
 
-                      <div class="form-group col-md-12 col-sm-12 col-xs-12">
-                        <label class="control-label col-md-3 col-sm-3 col-xs-12" for="valor">Valor*
-                        </label>
-                        <div class="col-md-9 col-sm-9 col-xs-12">
-                          <input type="text" id="valor" disabled class="form-control col-md-9 col-sm-9 col-xs-12" placeholder="{{exame.valor}}" name="valor">
-                        </div>
-                      </div>
-                        
-                    </div>
-                      
-                      <div class="form-group">
-                        <div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
-                          <a href="{% url 'exame_listar' %}"><div class="btn btn-primary">Voltar</div></a>
-                          <a href="{% url 'exame_editar' exame.pk %}"><div class="btn btn-warning">Editar</div></a>
-                          <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal"> Excluir</button>
-                        </div>
-                      </div>
-                    </form>
+						<div class="row">
+
+							<div class="form-group col-md-12 col-sm-12 col-xs-12">
+								<label class="control-label col-md-3 col-sm-3 col-xs-12"
+									for="tipo">Tipo* </label>
+								<div class="col-md-9 col-sm-9 col-xs-12">
+									<input type="text" id="tipo" disabled
+										class="form-control col-md-9 col-sm-9 col-xs-12"
+										placeholder="{{exame.tipo}}" name="tipo">
+								</div>
+							</div>
+
+							<div class="form-group col-md-12 col-sm-12 col-xs-12">
+								<label class="control-label col-md-3 col-sm-3 col-xs-12"
+									for="valor">Valor* </label>
+								<div class="col-md-9 col-sm-9 col-xs-12">
+									<input type="text" id="valor" disabled
+										class="form-control col-md-9 col-sm-9 col-xs-12"
+										placeholder="{{exame.valor}}" name="valor">
+								</div>
+							</div>
+
+						</div>
+
+						<div class="form-group">
+							<div class="col-md-6 col-sm-6 col-xs-12 col-md-offset-3">
+								<a href="{% url 'exame_listar' %}"><div
+										class="btn btn-primary">Voltar</div></a> <a
+									href="{% url 'exame_editar' exame.pk %}"><div
+										class="btn btn-warning">Editar</div></a>
+								<button type="button" class="btn btn-danger" data-toggle="modal"
+									data-target="#myModal">Excluir</button>
+							</div>
+						</div>
+					</form>
 				</div>
 			</div>
 		</div>

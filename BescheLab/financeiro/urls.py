@@ -1,32 +1,13 @@
 from django.conf.urls import url
-from .views import index
-from .views import pessoa
-from .views import operacao
 from .views import lancamento
+from .views import operacao
 
-
-urlpatterns = [
-    #Index
-    url(r'^$', index, name='index'),
-
-    #Urls de Pessoa
-    url(r'^pessoa/adicionar$', pessoa.adicionar, name='pessoa_adicionar'),
-    url(r'^pessoa/editar/(?P<pk>\d+)$', pessoa.editar, name='pessoa_editar'),
-    url(r'^pessoa/apagar/(?P<pk>\d+)$', pessoa.apagar, name='pessoa_apagar'),
-    url(r'^financeiro/pessoa$', pessoa.listar, name='pessoa_listar'),
-    
-    #Urls de Operacao
+urlpatterns = [    
     url(r'^operacao/adicionar$', operacao.adicionar, name='operacao_adicionar'),
-    url(r'^operacao/editar/(?P<pk>\d+)$', operacao.editar, name='operacao_editar'),
-    url(r'^operacao/apagar/(?P<pk>\d+)$', operacao.apagar, name='operacao_apagar'),
-    url(r'^operacao/detalhar/(?P<pk>\d+)$', operacao.detalhar,name='operacao_detalhar'),
-    url(r'^financeiro/operacao$', operacao.listar, name='operacao_listar'),
+    url(r'^operacao/(?P<pk>\d+)/editar$', operacao.editar, name='operacao_editar'),
+    url(r'^operacao/(?P<pk>\d+)/apagar$', operacao.apagar, name='operacao_apagar'),
     
-    #Urls de Lancamento
-    url(r'^lancamento/adicionar$', lancamento.adicionar, name='lancamento_adicionar'),
-    url(r'^lancamento/editar/(?P<lancamento>\d+)$', lancamento.editar, name='lancamento_editar'),
-    url(r'^lancamento/apagar/(?P<lancamento>\d+)$', lancamento.apagar, name='lancamento_apagar'),
-    url(r'^lancamento/detalhar/(?P<lancamento>\d+)$', lancamento.detalhar,name='lancamento_detalhar'),
-    url(r'^financeiro/lancamento/listarpessoa(?P<pk>\d+)$', lancamento.listarpessoa, name='lancamento_listarpessoa'),
-    url(r'^financeiro/lancamento/listar/(?P<operacao>\d+)$', lancamento.listar, name='lancamento_listar'),
+    url(r'^(?P<operacao>\w+)/(?P<pk>\d+)/editar$', lancamento.editar, name='lancamento_editar'),
+    url(r'^(?P<operacao>\w+)/(?P<pk>\d+)/apagar$', lancamento.apagar, name='lancamento_apagar'),
+    url(r'^gerenciar/(?P<operacao>\w+)s$', lancamento.adicionar, name='lancamento_adicionar'),
 ]

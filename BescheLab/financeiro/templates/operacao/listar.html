@@ -1,0 +1,56 @@
+{%extends 'layout.html'%} 
+{% block conteudo %}
+<div class="page-title">
+	<div class="title_left">
+		<h3>Configurações</h3>
+	</div>
+</div>
+<div class="clearfix"></div>
+<div class="row">
+	<div class="col-md-12 col-sm-12 col-xs-12">
+		<div class="x_panel">
+			<div class="x_title">
+				<h2>Lista de Operações</h2>
+				<ul class="nav navbar-right panel_toolbox">
+					<li><a class="collapse-link"><i class="fa fa-chevron-up"></i></a></li>
+				</ul>
+				<div class="clearfix"></div>
+			</div>
+			<div class="x_content">
+				<table id="datatable-responsive" class="table table-striped dt-responsive nowrap" cellspacing="0" width="100%">
+					<thead>
+						<tr>
+							<th class="col-md-11 col-sm-11 col-xs-11">Operação</th>
+							<th class="col-md-1 col-sm-1 col-xs-1"></th>
+						</tr>
+					</thead>
+
+					<tbody>
+						{% for operacao in operacoes %}
+						<tr>
+							<td title="Gerenciar operação" 
+								onclick="location.href = '{% url 'operacao_editar' operacao.pk %}';" 
+								style="cursor: pointer;">{{ operacao.nome }}
+							</td>
+							<td>
+								<i onclick="location.href = '{% url 'operacao_apagar' operacao.pk %}';" 
+								style="cursor: pointer;" aria-hidden="true" data-toggle="tooltip" 
+								data-placement="top" data-original-title="Excluir" 
+								class="fa fa-trash-o fa-lg fa-pull-right"></i>
+							</td>
+						</tr>
+						{% endfor %}
+					</tbody>
+				</table>
+				<a href="{% url 'operacao_adicionar' %}"><div class="btn btn-sm btn-primary">Adicionar</div></a>
+			</div>
+		</div>
+	</div>
+	<div class="form-group">
+		<div class="col-md-12 col-sm-12 col-xs-12">
+			<a href="{% url 'index' %}"><div class="btn btn-sm btn-default">Voltar</div></a>
+			<button type="submit" class="btn btn-sm btn-success">Salvar</button>
+		</div>
+	</div>
+</div>
+{% endblock%}

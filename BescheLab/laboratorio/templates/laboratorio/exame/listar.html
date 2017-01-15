@@ -1,5 +1,4 @@
-{%extends 'layout.html'%}
-{% block conteudo %}
+{%extends 'layout.html'%} {% block conteudo %}
 <div class="">
 	<div class="page-title">
 		<div class="title_left">
@@ -19,25 +18,27 @@
 				</div>
 				<div class="x_content">
 					<table id="datatable" class="table table-striped table-bordered">
-                      <thead>
-                        <tr>
-                          <th>Tipo</th>
-                          <th>Valor</th>
-                          <th></th>
-                        </tr>
-                      </thead>
-                      
-                      <tbody>
-                      	{% for exame in exames %}
-                        <tr>
-                          <td>{{ exame.tipo }}</td>
-                          <td>{{ exame.valor }}</td>
-                          <td><a href="{% url 'exame_detalhar' exame.pk %}"  class="btn btn-primary">Detalhes</a>
-                        </tr>
-                        {% endfor %}
-                      </tbody>
-                    </table>
-                    <a href="{% url 'exame_adicionar' %}"><div class="btn btn-primary">Adicionar</div></a>
+						<thead>
+							<tr>
+								<th>Tipo</th>
+								<th>Valor</th>
+								<th></th>
+							</tr>
+						</thead>
+
+						<tbody>
+							{% for exame in exames %}
+							<tr>
+								<td>{{ exame.tipo }}</td>
+								<td>{{ exame.valor }}</td>
+								<td><a href="{% url 'exame_detalhar' exame.pk %}"
+									class="btn btn-primary">Detalhes</a>
+							</tr>
+							{% endfor %}
+						</tbody>
+					</table>
+					<a href="{% url 'exame_adicionar' %}"><div
+							class="btn btn-primary">Adicionar</div></a>
 				</div>
 			</div>
 		</div>
